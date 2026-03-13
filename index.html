@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RayRi Wordle</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Source+Code+Pro:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app">
+    <header>
+      <h1>RayRi Wordle</h1>
+      <p class="subtitle">Guess the word in 6 tries</p>
+      <p class="day-label" id="day-label">Day 1 of RayRi</p>
+      <button type="button" class="btn-icon" id="help-btn" aria-label="How to play">?</button>
+    </header>
+
+    <main>
+      <div id="game-board" class="board" role="grid" aria-label="Word guesses"></div>
+
+      <div id="keyboard" class="keyboard" role="group" aria-label="Keyboard">
+        <div class="keyboard-row">
+          <button type="button" class="key" data-key="Q">Q</button>
+          <button type="button" class="key" data-key="W">W</button>
+          <button type="button" class="key" data-key="E">E</button>
+          <button type="button" class="key" data-key="R">R</button>
+          <button type="button" class="key" data-key="T">T</button>
+          <button type="button" class="key" data-key="Y">Y</button>
+          <button type="button" class="key" data-key="U">U</button>
+          <button type="button" class="key" data-key="I">I</button>
+          <button type="button" class="key" data-key="O">O</button>
+          <button type="button" class="key" data-key="P">P</button>
+        </div>
+        <div class="keyboard-row">
+          <button type="button" class="key" data-key="A">A</button>
+          <button type="button" class="key" data-key="S">S</button>
+          <button type="button" class="key" data-key="D">D</button>
+          <button type="button" class="key" data-key="F">F</button>
+          <button type="button" class="key" data-key="G">G</button>
+          <button type="button" class="key" data-key="H">H</button>
+          <button type="button" class="key" data-key="J">J</button>
+          <button type="button" class="key" data-key="K">K</button>
+          <button type="button" class="key" data-key="L">L</button>
+        </div>
+        <div class="keyboard-row">
+          <button type="button" class="key key-wide" id="enter-key">Enter</button>
+          <button type="button" class="key" data-key="Z">Z</button>
+          <button type="button" class="key" data-key="X">X</button>
+          <button type="button" class="key" data-key="C">C</button>
+          <button type="button" class="key" data-key="V">V</button>
+          <button type="button" class="key" data-key="B">B</button>
+          <button type="button" class="key" data-key="N">N</button>
+          <button type="button" class="key" data-key="M">M</button>
+          <button type="button" class="key key-wide" id="backspace-key">⌫</button>
+        </div>
+      </div>
+    </main>
+
+    <div id="message" class="message" aria-live="polite"></div>
+    <button type="button" id="play-again" class="btn-primary hidden">Play again</button>
+  </div>
+
+  <div id="modal-overlay" class="modal-overlay" aria-hidden="true">
+    <div class="modal" role="dialog" aria-labelledby="modal-title">
+      <h2 id="modal-title">How to play</h2>
+      <p>Guess the <strong>RayRi</strong> word in 6 tries.</p>
+      <ul>
+        <li><span class="tile example correct">A</span> — Letter is in the word and in the right spot.</li>
+        <li><span class="tile example present">B</span> — Letter is in the word but in the wrong spot.</li>
+        <li><span class="tile example absent">C</span> — Letter is not in the word.</li>
+      </ul>
+      <button type="button" class="btn-primary" id="modal-close">Got it</button>
+    </div>
+  </div>
+
+  <script src="words.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

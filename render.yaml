@@ -1,0 +1,9 @@
+# Render Blueprint: deploy as a static site
+# https://render.com/docs/blueprint-spec
+# In Render dashboard: New → Static Site → connect repo; build command empty, publish dir: .
+services:
+  - type: web
+    name: lexicon
+    env: static
+    buildCommand:
+    staticPublishPath: .
