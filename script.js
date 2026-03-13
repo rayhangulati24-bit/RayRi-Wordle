@@ -171,6 +171,7 @@
         gameOver = true;
         showMessage("You got it!", "win");
         playAgainEl.classList.remove("hidden");
+        fireCelebration();
         return;
       }
 
@@ -262,6 +263,39 @@
         document.getElementById("modal-overlay").setAttribute("aria-hidden", "true");
       }
     });
+  }
+
+  function fireCelebration() {
+    if (typeof confetti !== "function") return;
+    confetti({
+      particleCount: 120,
+      spread: 70,
+      origin: { y: 0.6 },
+      colors: ["#ff69b4", "#ff1493", "#ffb6c1", "#4169e1", "#1e90ff", "#87ceeb"],
+    });
+    setTimeout(() => {
+      confetti({
+        particleCount: 80,
+        angle: 60,
+        spread: 55,
+        origin: { x: 0 },
+        colors: ["#ff69b4", "#ff1493", "#4169e1", "#1e90ff"],
+      });
+    }, 150);
+    setTimeout(() => {
+      confetti({
+        particleCount: 80,
+        angle: 120,
+        spread: 55,
+        origin: { x: 1 },
+        colors: ["#ff69b4", "#ff1493", "#4169e1", "#1e90ff"],
+      });
+    }, 300);
+    const lasersEl = document.getElementById("celebration-lasers");
+    if (lasersEl) {
+      lasersEl.classList.add("active");
+      setTimeout(() => lasersEl.classList.remove("active"), 2200);
+    }
   }
 
   function updateDayLabel() {

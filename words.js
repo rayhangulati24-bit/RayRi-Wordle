@@ -25,7 +25,7 @@ const LEXICON_ANSWERS = [
   "magata",           // 18
   "teared",           // 19
   "shof",             // 20
-  "googitched",       // 21
+  "googitch",         // 21
   "skareen",          // 22
   "dopamin",          // 23
   "repute",           // 24
