@@ -1,5 +1,7 @@
-// Day 1 of RayRi = March 13, 00:00 IST (Indian Standard Time = UTC+5:30)
-const START_DATE = new Date(Date.UTC(2025, 2, 12, 18, 30, 0, 0));
+// Day 1 of RayRi = this date at 00:00 IST. Change it to the date you want the cycle to start.
+// Right now set so "today" is Day 1 (March 28, 2025 00:00 IST). After 25 days it repeats.
+// IST = UTC+5:30 → March 28 00:00 IST = March 27 18:30 UTC
+const START_DATE = new Date(Date.UTC(2025, 2, 27, 18, 30, 0, 0));
 
 // RayRi words — 25 days. Each word keeps its original length (4 to 14 letters).
 const LEXICON_ANSWERS = [
