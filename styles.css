@@ -410,18 +410,57 @@ h1 {
   100% { transform: translateY(100vh) rotate(90deg); opacity: 0; }
 }
 
+/* Mobile: larger text so it's readable on phones */
 @media (max-width: 480px) {
+  html {
+    font-size: 18px;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+  }
+
+  .day-label {
+    font-size: 0.95rem;
+  }
+
   .key {
-    min-width: 1.6rem;
-    height: 2.6rem;
-    font-size: 0.75rem;
+    min-width: 2rem;
+    height: 3.25rem;
+    font-size: 1rem;
   }
 
   .key-wide {
-    min-width: 2.4rem;
+    min-width: 3rem;
+    font-size: 0.9rem;
   }
 
   .tile {
-    font-size: clamp(0.45rem, min(1.5rem, 12vw / var(--word-length, 5)), 1.5rem);
+    font-size: clamp(1rem, min(2rem, 18vw / var(--word-length, 5)), 2rem);
+  }
+
+  .message {
+    font-size: 1rem;
+  }
+
+  .btn-primary {
+    font-size: 1rem;
+  }
+
+  .modal h2 {
+    font-size: 1.5rem;
+  }
+
+  .modal p,
+  .modal ul {
+    font-size: 1rem;
+  }
+
+  .tile.example {
+    font-size: 1.1rem;
   }
 }
