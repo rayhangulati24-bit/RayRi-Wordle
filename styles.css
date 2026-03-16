@@ -451,7 +451,7 @@ h1 {
   }
 
   .keyboard {
-    margin-top: 9rem;
+    margin-top: calc(9rem + (220px / 6) * 1.5);
     gap: 0.35rem;
   }
 
