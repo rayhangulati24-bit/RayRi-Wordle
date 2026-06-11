@@ -17,13 +17,20 @@
     return answer.length;
   }
 
+  function isPreviewMode() {
+    const previewUntil = window.LEXICON_PREVIEW_UNTIL;
+    return previewUntil && new Date() < previewUntil;
+  }
+
   function getDayIndex() {
+    if (isPreviewMode()) return 0;
     const start = window.LEXICON_START_DATE;
     const now = new Date();
     const msPerDay = 24 * 60 * 60 * 1000;
     const daysSinceStart = Math.floor((now - start) / msPerDay);
     if (daysSinceStart < 0) return 0;
-    return daysSinceStart % 25;
+    const len = window.LEXICON_ANSWERS.length;
+    return daysSinceStart % len;
   }
 
   function getTodaysWord() {
@@ -301,7 +308,10 @@
   function updateDayLabel() {
     const n = getDayIndex() + 1;
     const el = document.getElementById("day-label");
-    if (el) el.textContent = "Day " + n + " of RayRi";
+    if (el) {
+      el.textContent =
+        "Day " + n + " of RayRi" + (isPreviewMode() ? " (preview)" : "");
+    }
   }
 
   function init() {
